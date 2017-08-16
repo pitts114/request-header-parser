@@ -1,0 +1,19 @@
+{
+  "name": "request-header-parser",
+  "version": "1.0.0",
+  "description": "A microservice that returns the IP address, language and operating system for your browser. A freeCodeCamp project.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pullman14/request-header-parser.git"
+  },
+  "author": "pullman14",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pullman14/request-header-parser/issues"
+  },
+  "homepage": "https://github.com/pullman14/request-header-parser#readme"
+}
