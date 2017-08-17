@@ -14,7 +14,15 @@ app.use(requestLanguage({
 app.get("/api", (req, res) =>{
   var source = req.headers['user-agent']
   var ua = useragent.parse(source)
-  var obj = {"ipaddress": req.ip.replace("::ffff:", ''), "language":req.language, "software": ua.source}
+  var ipAddr = req.headers["x-forwarded-for"];
+  if (ipAddr){
+    var list = ipAddr.split(",");
+    ipAddr = list[list.length-1];
+  } else {
+    ipAddr = req.connection.remoteAddress;
+  }
+
+  var obj = {"ipaddress": ipAddr.replace("::ffff:", ''), "language":req.language, "software": ua.source}
   res.writeHead(200, {"Content-Type":"application/json"})
   res.end(JSON.stringify(obj))
 })
