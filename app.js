@@ -22,7 +22,7 @@ app.get("/api", (req, res) =>{
     ipAddr = req.connection.remoteAddress
   }
 
-  var obj = {"ipaddress": ipAddr.replace("::ffff:", ''), "language":req.language, "software": ua.source}
+  var obj = {"ipaddress": ipAddr.replace("::ffff:", ''), "language":req.language, "software": ua.os}
   res.writeHead(200, {"Content-Type":"application/json"})
   res.end(JSON.stringify(obj))
 })
